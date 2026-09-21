@@ -23,6 +23,8 @@ Static and instance classes
     static constructors should not have access modifiers as it cannot be accessed outside the class
 
 
+Inheritence
+
 
 
 
