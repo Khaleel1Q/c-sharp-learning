@@ -1,0 +1,30 @@
+Create project=> C# PRoject=> Console application
+
+Namespaces
+    General classifiacation, can be used to have multiple  different classes which belong to similar categories.
+
+Classess:
+
+    Class consists of Data and behaviour
+    Data = Fields of the class
+    Behaviour = Methods of the classes
+    Constructor = method with same name of the class, 
+                  doesn't have a type,
+                  called automatically when the class is triggered
+                  if constructor is not defined/declared c# provides a default parameterless constructor
+                  When we have more than one constructor whih take different type of parameters, it is called overloading
+
+    Destructor = name same as the class preceeded with ~
+                 used to clean up the code
+
+Static and instance classes
+    the items which are should be uniform accross all places it is accessed should be marked static to avoid duplication of the same item and make it reusable and save memory
+    static items cant be invoked using "this.", they have to be invoked using "ClassName."
+    static constructors should not have access modifiers as it cannot be accessed outside the class
+
+
+
+
+
+
+
