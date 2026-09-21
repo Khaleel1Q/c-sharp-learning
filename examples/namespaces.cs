@@ -2,7 +2,7 @@ using System;
 using AA = A.A;
 using AB = A.B;
 
-public class namespaces
+public class Namespaces
 {
 public static void Main()
 	{

@@ -1,5 +1,5 @@
 using System;
-public class classes
+public class Classes
 {
 public static void Main()
 	{

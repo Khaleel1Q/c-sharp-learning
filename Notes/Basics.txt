@@ -23,7 +23,10 @@ Static and instance classes
     static constructors should not have access modifiers as it cannot be accessed outside the class
 
 
-Inheritence
+Inheritence:
+    Useful in reducing redundant code, making common class for shared logic, and accessing it in child classes and adding additional properties in the chilad classes as per requirement
+    helps in saving time and reducing errors
+    
 
 
 
