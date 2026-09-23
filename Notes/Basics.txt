@@ -26,6 +26,20 @@ Static and instance classes
 Inheritence:
     Useful in reducing redundant code, making common class for shared logic, and accessing it in child classes and adding additional properties in the chilad classes as per requirement
     helps in saving time and reducing errors
+
+Method Hiding:
+    If we use the same method name in child class which is used in parent class, the method from parent class is hidden
+    for intentional hiding use new keyword
+    even after method hiding if we want to use parent class method in child class, use base.item or ((Parent class)child class object).common method name or assign parent class object to child class type
+    child class can point to a a parent class reference object but vice versa is not true
+
+Polymorphism
+    Polymorphism is to invoke child class variables, through parent class instances at run time
+    Override is used to invoke child class objects instead of parent class object
+    we need to mark the function in parent class as virtual for making Polymorphism possible
+
+
+
     
 
 
