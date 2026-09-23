@@ -1,0 +1,493 @@
+C# Basics - Professional Notes
+
+1. What is C#?
+    - C# is a modern, general-purpose, object-oriented programming language developed by Microsoft.
+    - It is mainly used with the .NET platform to build desktop apps, web apps, APIs, cloud services, and games.
+    - C# is strongly typed, secure, and supports modern programming concepts such as OOP, generics, async programming, and LINQ.
+
+2. Creating a C# Project
+    - In Visual Studio / VS Code:
+        - Create a new project
+        - Select C#
+        - Choose Console App
+        - Name the project and create it
+    - A basic C# console app contains a Main() method, which is the starting point of the program.
+
+3. Basic Program Structure
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+
+    Key points:
+    - using System; imports the System namespace, which contains common classes like Console.
+    - class defines a class.
+    - Main() is the entry point of the application.
+    - Console.WriteLine() prints output to the console.
+
+4. Variables and Data Types
+    C# is strongly typed, so every variable must have a declared type.
+
+    Common built-in data types:
+    - int -> whole numbers
+    - double -> decimal values
+    - float -> float numbers with less precision than double
+    - bool -> true or false
+    - char -> single character
+    - string -> text
+
+    Example:
+    int age = 25;
+    double salary = 45000.50;
+    bool isStudent = true;
+    string name = "Alice";
+    char grade = 'A';
+
+    Constants:
+    - Use const when the value should not change.
+    - Example: const float PI = 3.14f;
+
+5. Operators
+    Arithmetic:
+    - +, -, *, /, %
+
+    Comparison:
+    - ==, !=, >, <, >=, <=
+
+    Logical:
+    - &&, ||, !
+
+    Assignment:
+    - =, +=, -=, *=, /=
+
+    Example:
+    int a = 10;
+    int b = 5;
+    int sum = a + b;
+
+6. Control Flow
+    If / Else:
+    if (age >= 18)
+    {
+        Console.WriteLine("Adult");
+    }
+    else
+    {
+        Console.WriteLine("Minor");
+    }
+
+    Switch:
+    switch (day)
+    {
+        case 1:
+            Console.WriteLine("Monday");
+            break;
+        default:
+            Console.WriteLine("Other");
+            break;
+    }
+
+    Loops:
+    - for loop
+    - while loop
+    - do-while loop
+    - foreach loop
+
+    Example:
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine(i);
+    }
+
+7. Methods
+    A method is a block of code that performs a specific task.
+    It can take parameters and return a value.
+
+    Syntax:
+    returnType MethodName(parameterType parameterName)
+    {
+        // code
+    }
+
+    Example:
+    int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    Method overloading:
+    - Same method name with different parameter list.
+    - Example: Add(int a, int b) and Add(double a, double b)
+
+8. Namespaces
+    A namespace is a way to organize related classes and code.
+    It helps avoid naming conflicts and groups code logically.
+
+    Example:
+    namespace MyApp
+    {
+        class Employee
+        {
+        }
+    }
+
+    Benefits:
+    - Organizes large projects
+    - Prevents class name collisions
+    - Improves maintainability and readability
+
+9. Classes and Objects
+    A class is a blueprint for creating objects.
+    An object is an instance of a class.
+
+    Class consists of:
+    - Data (fields / variables)
+    - Behavior (methods)
+
+    Example:
+    class Person
+    {
+        public string name;
+        public int age;
+
+        public void PrintDetails()
+        {
+            Console.WriteLine($"Name: {name}, Age: {age}");
+        }
+    }
+
+    Person p1 = new Person();
+    p1.name = "John";
+    p1.age = 30;
+    p1.PrintDetails();
+
+10. Fields, Properties, and Methods
+    Fields:
+    - Variables declared inside a class.
+    - Store data for the object.
+
+    Methods:
+    - Define what the class can do.
+
+    Properties:
+    - Provide controlled access to private fields.
+    - They can include validation logic.
+
+    Example:
+    class Student
+    {
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+    }
+
+11. Constructors
+    A constructor is a special method that runs automatically when an object is created.
+    It has the same name as the class and no return type.
+
+    Example:
+    class Employee
+    {
+        public string name;
+
+        public Employee()
+        {
+            name = "Unknown";
+        }
+
+        public Employee(string n)
+        {
+            name = n;
+        }
+    }
+
+    Important points:
+    - If no constructor is defined, C# provides a default parameterless constructor.
+    - Multiple constructors with different parameters are called constructor overloading.
+    - Constructors are used to initialize object state.
+
+12. Destructor
+    A destructor is a special method used for cleanup before an object is destroyed.
+    It is written with a tilde (~) before the class name.
+
+    Example:
+    ~Employee()
+    {
+        Console.WriteLine("Object is being destroyed.");
+    }
+
+    Notes:
+    - Destructors are rarely used in modern C# because the .NET garbage collector handles memory cleanup automatically.
+    - They are mainly used for unmanaged resources cleanup if needed.
+
+13. Access Modifiers
+    Access modifiers control the visibility of class members.
+
+    Common types:
+    - public: accessible from anywhere
+    - private: accessible only inside the class
+    - protected: accessible in the class and derived classes
+    - internal: accessible within the same assembly
+
+    Example:
+    class Demo
+    {
+        public int x;
+        private int y;
+    }
+
+14. Encapsulation
+    Encapsulation means hiding internal data and exposing only necessary functionality.
+    It helps protect the data and improve maintainability.
+
+    Example:
+    class Account
+    {
+        private decimal balance;
+
+        public void Deposit(decimal amount)
+        {
+            if (amount > 0)
+                balance += amount;
+        }
+    }
+
+15. Inheritance
+    Inheritance allows one class to inherit members from another class.
+    It helps reduce duplicate code and promotes code reuse.
+
+    Example:
+    class Animal
+    {
+        public void Eat()
+        {
+            Console.WriteLine("Eating");
+        }
+    }
+
+    class Dog : Animal
+    {
+        public void Bark()
+        {
+            Console.WriteLine("Barking");
+        }
+    }
+
+    Benefits:
+    - Reuse common logic
+    - Reduce redundancy
+    - Create a hierarchy of related classes
+
+    Note:
+    - A base class is the parent class.
+    - A derived class is the child class.
+
+16. Base Class and Derived Class
+    A derived class can access public or protected members of the base class.
+    To call a base class constructor or method, use base.
+
+    Example:
+    class Employee
+    {
+        public Employee(string name)
+        {
+            Console.WriteLine(name);
+        }
+    }
+
+    class Manager : Employee
+    {
+        public Manager(string name) : base(name)
+        {
+        }
+    }
+
+17. Method Hiding
+    If a derived class defines a method with the same name as a base class method, the base method is hidden.
+    To intentionally hide it, use the new keyword.
+
+    Example:
+    class Parent
+    {
+        public void Print()
+        {
+            Console.WriteLine("Parent");
+        }
+    }
+
+    class Child : Parent
+    {
+        public new void Print()
+        {
+            base.Print();
+            Console.WriteLine("Child");
+        }
+    }
+
+    Important:
+    - Hiding does not override behavior automatically.
+    - base.Print() allows us to call the parent method explicitly.
+
+18. Polymorphism
+    Polymorphism means one object can take many forms.
+    In C#, polymorphism is achieved mainly through method overriding and inheritance.
+
+    Example:
+    class Shape
+    {
+        public virtual void Draw()
+        {
+            Console.WriteLine("Drawing shape");
+        }
+    }
+
+    class Circle : Shape
+    {
+        public override void Draw()
+        {
+            Console.WriteLine("Drawing circle");
+        }
+    }
+
+    Key points:
+    - The base method must be marked virtual.
+    - The derived method must use override.
+    - At runtime, the derived method is called through a base-class reference.
+
+    Example:
+    Shape s = new Circle();
+    s.Draw();
+
+    Output: Drawing circle
+
+19. Static Members
+    Static members belong to the class rather than to a specific object instance.
+    They are shared across all instances of that class.
+
+    Example:
+    class Circle
+    {
+        static float pi;
+
+        static Circle()
+        {
+            pi = 3.14f;
+        }
+
+        public float GetArea(int radius)
+        {
+            return pi * radius * radius;
+        }
+    }
+
+    Characteristics:
+    - Static members cannot be accessed using this.
+    - They are accessed using ClassName.MemberName.
+    - Static constructors are called automatically before the first instance is created or a static member is accessed.
+    - Static constructors cannot have access modifiers.
+
+20. Instance vs Static Members
+    Instance members:
+    - Belong to each object created from the class
+    - Example: instance variable or instance method
+
+    Static members:
+    - Belong to the class itself
+    - Shared by all objects
+    - Best for common values or utility methods
+
+    Example:
+    class MathHelper
+    {
+        public static int Square(int x)
+        {
+            return x * x;
+        }
+    }
+
+    int result = MathHelper.Square(5);
+
+21. Exception Handling
+    C# uses try, catch, finally blocks to handle runtime errors.
+
+    Example:
+    try
+    {
+        int x = 10;
+        int y = 0;
+        int z = x / y;
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine("Cannot divide by zero.");
+    }
+    finally
+    {
+        Console.WriteLine("This always executes.");
+    }
+
+    Importance:
+    - Prevents application crashes
+    - Helps provide meaningful error messages
+
+22. Strings and String Interpolation
+    Strings in C# are sequences of characters.
+
+    Example:
+    string name = "Alice";
+    Console.WriteLine("Hello " + name);
+    Console.WriteLine($"Hello {name}");
+
+    String interpolation:
+    - Use $"text {variable}" to embed values in strings.
+
+23. Arrays and Collections
+    Arrays:
+    - Store multiple values of the same type.
+
+    Example:
+    int[] numbers = { 1, 2, 3, 4 };
+
+    Lists:
+    - More flexible than arrays.
+    - Use List<T> from System.Collections.Generic.
+
+    Example:
+    List<int> marks = new List<int> { 90, 85, 80 };
+
+24. Important C# Concepts to Remember
+    - C# is object-oriented.
+    - Every program starts in Main().
+    - Classes define structure; objects hold data.
+    - Encapsulation protects data.
+    - Inheritance promotes reusability.
+    - Polymorphism allows runtime method behavior based on object type.
+    - Static members are shared across all objects in the class.
+    - Namespaces organize code.
+
+25. Summary
+    C# is a powerful and beginner-friendly language for building reliable software on the .NET platform.
+    A strong understanding of classes, objects, inheritance, polymorphism, methods, and static members forms the foundation of OOP in C#.
+    Once these concepts are clear, you can move to more advanced topics like interfaces, abstract classes, collections, LINQ, file handling, asynchronous programming, and ASP.NET Core.
+
+Quick Revision
+    - Class = blueprint
+    - Object = instance of a class
+    - Constructor = initializes object
+    - Destructor = cleanup
+    - Inheritance = reuse code
+    - Method hiding = use new keyword
+    - Polymorphism = override methods in derived classes
+    - Static = shared class-level member
+    - Namespace = organize code
+
+End of Notes
