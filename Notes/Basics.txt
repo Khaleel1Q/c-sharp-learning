@@ -38,8 +38,15 @@ Polymorphism
     Override is used to invoke child class objects instead of parent class object
     we need to mark the function in parent class as virtual for making Polymorphism possible
 
+overloading
+    A class can have more than on method with the same name if they meet the following condition:
+        1: they have different number of parameters
+        2: if they have different type of a parameters
+        3: if they have different kinds of parameter
 
-
+Properties
+    Never expose class fields
+    Before encapsulation get and set were used
     
 
 
